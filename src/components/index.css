@@ -1,0 +1,12 @@
+.cmyk-row {
+    justify-content: center;
+}
+
+.cmyk-col {
+    max-width: 50em;
+}
+
+.panel-header {
+    text-align: center;
+    margin-bottom: 2em;
+}
