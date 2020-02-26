@@ -1,10 +1,12 @@
 import React from 'react';
-import ChoseColor from './ChoseColor';
+import ChoseColor from './ColorPicker/ChoseColor';
+import MyToast from './Toast/toast';
 
 class App extends React.Component {
     render() {
         return (
             <div>
+                <MyToast />
                 <ChoseColor />
             </div>
         );

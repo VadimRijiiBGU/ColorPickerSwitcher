@@ -2,12 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Badge } from 'react-bootstrap';
 
-import Form from './Form/index';
+import Form from '../Form';
 import ColorPicker from './ColorPicker';
-import RGBtoXYZ from './helpers/RGBandXYZ/RGBtoXYZ';
-import XYZtoRGB from './helpers/RGBandXYZ/XYZtoRGB';
-import RGBtoCMYK from './helpers/RGBandCMYK/RGBtoCMYK';
-import CMYKtoRGB from './helpers/RGBandCMYK/CMYKtoRGB';
+import RGBtoXYZ from '../../helpers/RGBandXYZ/RGBtoXYZ';
+import XYZtoRGB from '../../helpers/RGBandXYZ/XYZtoRGB';
+import RGBtoCMYK from '../../helpers/RGBandCMYK/RGBtoCMYK';
+import CMYKtoRGB from '../../helpers/RGBandCMYK/CMYKtoRGB';
 
 import './index.css';
 

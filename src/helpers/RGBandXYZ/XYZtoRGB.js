@@ -1,3 +1,6 @@
+import { store } from '../../index';
+import { showModal } from '../../actions';
+
 export default ({ x, y, z }) => {
     let var_X = x / 100;
     let var_Y = y / 100;
@@ -26,9 +29,28 @@ export default ({ x, y, z }) => {
         var_B = 12.92 * var_B;
     }
 
-    const r = var_R * 255;
-    const g = var_G * 255;
-    const b = var_B * 255;
+    let r = var_R * 255;
+    let g = var_G * 255;
+    let b = var_B * 255;
+
+    const modal = {};
+    if (r < 0 || r > 255) {
+        r = r < 0 ? 0 : 255;
+        modal.isShown = true;
+        modal.text = 'R went beyond! Rounding occurred';
+    }
+    if (g < 0 || g > 255) {
+        g = g < 0 ? 0 : 255;
+        modal.isShown = true;
+        modal.text = 'G went beyond! Rounding occurred';
+    }
+    if (b < 0 || b > 255) {
+        b = b < 0 ? 0 : 255;
+        modal.isShown = true;
+        modal.text = 'B went beyond! Rounding occurred';
+    }
+
+    Object.keys(modal).length && store.dispatch(showModal(modal));
 
     return { r, g, b };
 }
