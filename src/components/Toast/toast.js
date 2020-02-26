@@ -9,7 +9,7 @@ class MyToast extends React.Component {
             <Toast
                 onClose={() => this.props.onClose(this.props.toast.id)}
                 autohide
-                delay={1500}
+                delay={1000}
                 animation={true}
             >
                 <Toast.Header className="toast-header">

@@ -15,7 +15,7 @@ class Form extends React.Component {
         if (event.target.value > this.props.validate.max || event.target.value < this.props.validate.min) {
             this.setState({ error: {...this.state.error, [event.target.id]: `Must be greater than ${this.props.validate.min} and less than ${this.props.validate.max}`}})
         } else {
-            this.setState({ error: null });
+            this.setState({ error: {...this.state.error, [event.target.id]: null }});
         }
     };
 
