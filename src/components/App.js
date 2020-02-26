@@ -11,7 +11,6 @@ class App extends React.Component {
     };
 
     renderToasts = (toasts) => {
-        console.log(toasts);
         return toasts.map(toast => {
            return (
                <MyToast
