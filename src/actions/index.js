@@ -1,13 +1,16 @@
+import { ADD_TOAST, REMOVE_TOAST } from '../constants/actionTypes';
+import createToast from '../helpers/createToast';
+
 export const showModal = (modal) => {
     return {
-        type: 'SHOW_MODAL',
-        payload: modal
+        type: ADD_TOAST,
+        payload: createToast(modal)
     };
 };
 
-export const closeModal = (modal) => {
+export const closeModal = (id) => {
     return {
-        type: 'CLOSE_MODAL',
-        payload: modal
+        type: REMOVE_TOAST,
+        payload: id
     };
 };

@@ -36,17 +36,14 @@ export default ({ x, y, z }) => {
     const modal = {};
     if (r < 0 || r > 255) {
         r = r < 0 ? 0 : 255;
-        modal.isShown = true;
         modal.text = 'R went beyond! Rounding occurred';
     }
     if (g < 0 || g > 255) {
         g = g < 0 ? 0 : 255;
-        modal.isShown = true;
         modal.text = 'G went beyond! Rounding occurred';
     }
     if (b < 0 || b > 255) {
         b = b < 0 ? 0 : 255;
-        modal.isShown = true;
         modal.text = 'B went beyond! Rounding occurred';
     }
 

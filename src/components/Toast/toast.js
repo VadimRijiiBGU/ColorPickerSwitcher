@@ -1,23 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import { Toast } from 'react-bootstrap';
-import { closeModal } from '../../actions';
 import './index.css';
 
 class MyToast extends React.Component {
-    onCloseModal = () => {
-        this.props.closeModal();
-    };
-
-    render() {
+     render() {
         return (
             <Toast
-                style={{ position: 'absolute', top: 0, right: 0 }}
-                onClose={this.onCloseModal}
-                show={this.props.modal.isShown}
+                onClose={() => this.props.onClose(this.props.toast.id)}
                 autohide
                 delay={3000}
+                animation={true}
             >
                 <Toast.Header className="toast-header">
                     <span className="mr-2">&#9888;</span>
@@ -25,7 +18,7 @@ class MyToast extends React.Component {
                 </Toast.Header>
                 <Toast.Body className="toast-body">
                     <div >
-                        {this.props.modal.text}
+                        {this.props.toast.text}
                     </div>
                 </Toast.Body>
             </Toast>
@@ -33,12 +26,4 @@ class MyToast extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        modal: state.modal
-    };
-};
-
-export default connect(mapStateToProps, {
-    closeModal
-})(MyToast);
+export default MyToast;

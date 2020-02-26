@@ -1,14 +1,12 @@
-const internalModal = {
-    isShown: false,
-    text: null
-};
+import { ADD_TOAST, REMOVE_TOAST } from '../constants/actionTypes';
 
-export const modalReducer = (state = internalModal, action) => {
-    if (action.type === 'SHOW_MODAL') {
-        return Object.assign({}, action.payload);
-    } else if (action.type === 'CLOSE_MODAL') {
-        return { isShown: false };
+export const modalReducer = (state = [], action) => {
+    switch (action.type) {
+        case ADD_TOAST:
+            return [action.payload, ...state];
+        case REMOVE_TOAST:
+            return state.filter(toast => toast.id !== action.payload);
+        default:
+            return state;
     }
-
-    return state;
 };
